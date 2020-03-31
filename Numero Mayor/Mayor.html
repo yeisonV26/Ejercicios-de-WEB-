@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Autor Yeidon Vela
+ID:597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+        //Creo la funcion para calcular el numero mayor
+
+        function Mayor(){
+            var n1=parseInt(document.getElementById("n1").value);
+            var n2=parseInt(document.getElementById("n2").value);
+            var n3=parseInt(document.getElementById("n3").value);
+
+            var num;
+            //Utilizo la funcion de Math.max para encontrar el mayor de los tres numeros
+            num = Math.max(n1, n2, n3)
+
+            //Pongo un alert para mostrar el resultado  
+        alert('Numero Mayor: ' + num);
+    };
+    </script>
+    <h4>Encontrar numero mayor </h4>
+
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion Mayor()-->
+    <form>
+
+        <li><input type="text" id="n1" value="" placeholder="introduce el primer numero"></li>
+        <br>
+        <li><input type="text" id="n2" value="" placeholder="introduce el segundo numero"></li>
+        <br>
+        <li><input type="text" id="n3" value="" placeholder="introduce el tercero numero"></li>
+        <br>
+        <input type="submit" onclick="return Mayor()" value="Mayor">
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yeison Vela
+    ID:597335-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+
+        function Ovector() {
+
+            var n = parseInt(document.getElementById("n").value);
+            var num = [n];
+            var p = 0;
+            var m = 0;
+            document.write('<br/>Sin ordenar:')
+            for (var i = 0; i < n; i++) {
+                if (i % 2 == 0) {
+                    num[i] = i * i + 1;
+
+                } else {
+                    num[i] = 3 * (i + 1);
+
+                }
+                if (num[i] % 2 == 0) {
+                    p++;
+                } else {
+                    m++;
+
+                }
+                document.write('<br/>El valor de la posicion es: [ ' + i + ' ] ' + num[i]);
+
+            }
+
+            document.write('<br/>')
+            document.write('<br/>Ordenado:')
+
+            var impar = [];
+            var par = [];
+            var x = 0;
+            var y = 0;
+            for (var i = 0; i < n; i++) {
+                if (num[i] % 2 == 0) {
+                    par[x] = num[i];
+                    x++;
+
+                } else {
+                    impar[y] = num[i];
+                    y++;
+
+                }
+            }
+
+
+
+            var c = 0;
+            for (var i = 0; i < p - 1; i++) {
+                for (var j = i + 1; j < p; j++) {
+                    if (par[i] < par[j]) {
+                        c = par[i];
+                        par[i] = par[j];
+                        par[j] = c;
+                    }
+                }
+            }
+
+
+            for (var i = 0; i < m - 1; i++) {
+                for (var j = i + 1; j < m; j++) {
+                    if (impar[i] > impar[j]) {
+                        c = impar[i];
+                        impar[i] = impar[j];
+                        impar[j] = c;
+                    }
+                }
+            }
+
+
+            for (var i = 0; i < p; i++) {
+                num[i] = par[i];
+            }
+
+            
+            for (var i = 0; i < m; i++) {
+                num[i + m] = impar[i];
+            }
+
+            for (var i = 0; i < n; i++) {
+                document.write('<br/>El valor de la posicion es: [ ' + i + ' ] ' + num[i]);
+            }
+
+        };
+
+
+
+
+    </script>
+
+    <h4>Operacoines de un vector</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion vector()-->
+
+    <label for="numero">Cuantas posiciones desea:</label>
+    <li><input type="text" id="n" value="" placeholder="Numero: "></li>
+    <br>
+    <input type="submit" onclick="return Ovector()" value="Calculo">
+
+</body>
+
+</html>

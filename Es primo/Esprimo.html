@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yeison Vela 
+    ID:597335-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+
+        function primo(){
+            //creo las variables 
+            var n = parseInt(document.getElementById("n").value);
+            var primo = true;
+            i = 0;
+            //realizo el ciclo for donde leo el numero que el usuario ungreso y saco el mod del numero para saber si es igual a cero
+            //si el numero es igaul a cero entonces el numero no es primo, pero si no es igaul a cero el numero es primo
+            for (var i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    primo = false;
+                }
+            }
+
+            if(primo == true){
+                document.write('El numero ' + n + ' es primo');
+            }else{(primo == false)
+                document.wrtie('El numero ' + n + ' no es primo');
+            }
+
+        };
+
+    </script>
+
+    <h4>¿Es primo?</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion primo()-->
+
+    <label for="numero">Ingrese el numero:</label>
+    <li><input type="text" id="n" value="" placeholder="Numero: "></li>
+    <br>
+    <input type="submit" onclick="return primo()" value="Calculo">
+
+</body>
+
+</html>

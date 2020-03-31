@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--Autor: Yeison Vela 
+        ID:597335-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+      // inicio la funcion para calcular si es par o impar
+      // Creo unos alert para imprimir el resultado
+    function parImpar()
+	{
+		var num=parseInt(document.getElementById("valor").value);
+		if (num%2==0) {
+         alert("El numero introducido es par");
+      } else {
+         alert("El numero introducido es impar");
+      }
+   }
+   
+    </script>
+
+    <h4>Determinar si un valor es par o impar</h4>
+ 
+
+<!--Creo un formulario donde esta un campo de texto y un boton en el cual cuando hago click llamo a la funcion parImpar -->
+<form>
+	<input type="text" id="valor" value="" placeholder="introduce un valor numerico">
+	<input type="submit" onclick="return parImpar()" value="Par/Impar">
+</form>
+
+ 
+</body>
+</html>

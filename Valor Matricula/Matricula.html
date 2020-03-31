@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yeison Vela
+    ID:597335-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+    <script>
+
+        function Matricula() {
+
+            var numero = parseInt(document.getElementById("n1").value);
+            var creditos = parseInt(document.getElementById("n2").value);
+            var estrato = parseInt(document.getElementById("n3").value);
+
+            var valor = 0;
+            var des = 0;
+            var final = 0;
+            
+            if(numero <= 20)
+                valor = numero * creditos;
+            else
+                valor = 20 * creditos + (numero-20) * creditos * 2;
+            
+
+
+            //Creo un switch en el cual se asigna a cada cse el estrato que el usuario pone
+            switch (estrato) {
+
+                case 1:
+
+                        des = valor * 0.8; //cuando es de estrato 1 calculo el valor con 20 creditos
+                        final = valor-des;
+                        alert('Valor con 20 creditos: ' + final)
+                        alert('Subsidio estrato 1 es: ' + 200000);
+                        
+                break;
+
+                case 2:
+
+                        des = valor * 0.5; //cuando es de estrato 2 calculo el valor con 20 creditos
+                        final = valor-des;
+                        alert('Valor con 20 creditos: ' + final);
+                        alert('Subsidio estrato 2 es: ' + 100000);
+                    
+                                            
+                break;
+
+                case 3:
+
+                        des = valor * 0.3; //cuando es de estrato 3 calculo el valor con 20 creditos
+                        final = valor-des;
+                        alert('Valor con 20 creditos: ' + final);
+                    
+                break;
+            }
+
+            
+
+        };
+
+    </script>
+
+    <h4>El valor de la matricula</h4>
+
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion Matricula()-->
+    <form>
+
+        <li><input type="text" id="n1" value="" placeholder="Ingrese el numero de creditos"></li>
+        <br>
+        <li><input type="text" id="n2" value="" placeholder="valor del credito"></li>
+        <br>
+        <li><input type="text" id="n3" value="" placeholder="Estrato del estudiante"></li>
+        <br>
+
+        <input type="submit" onclick="return Matricula()" value="Calculo">
+
+    </form>
+
+
+</body>
+
+</html>

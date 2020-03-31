@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yeison Vela 
+    ID:597335-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+
+        function nomina() {
+            
+            var n1 = document.getElementById("nombre").value;
+            var n2 = parseInt(document.getElementById("n2").value);
+            var n3 = parseInt(document.getElementById("n3").value);
+            var n4 = parseInt(document.getElementById("n4").value);
+
+            //multiplico los valores
+            var total = n2 * n3;
+            //creo un if donde comparo los valor, si el total es mayor al salario minino imprimo el nombre y el valor mensual si no solo imprimo el nombre
+            if (total > n4)
+                alert('Nombre: ' + n1 + ' Salario Mensual: ' + total);
+            else
+                alert('Nombre: ' + n1);
+        };
+
+    </script>
+
+    <h3>Calculo de la nomina</h3>
+
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion nomina()-->
+    <form>
+
+        <li><input type="text" id="nombre" name="texto" value="" placeholder="Ingrese el nombre "></li>
+        <br>
+        <li><input type="text" id="n2" value="" placeholder="Ingrese el numero de horas trabajadas"></li>
+        <br>
+        <li><input type="text" id="n3" value="" placeholder="Ingrese el valor de la hora"></li>
+        <br>
+        <li><input type="text" id="n4" value="" placeholder="Ingrese el valor del salario minimo mensual"></li>
+        <br>
+        <input type="submit" onclick="return nomina()" value="Calculo">
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Autor Yeison Vela
+    ID:597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+<body>
+    
+    <script>
+
+        function numeroPi(){
+        
+            //creo las variables
+            var n = parseInt(document.getElementById("n").value);
+            var ab = 1;
+            var sig = 1;
+            var x = 0;
+            var res = 0;
+            //utilizo un for para realizar la funcion donde lee el numero que el usuario ingreso 
+            //donde utilizo la variables ab para poner la parte de abajo la cual va aumentando con sig que es el contador 
+            for(var i = 0; i<n; i++){   
+
+                x = 1/ab* sig;
+                res += x;
+                ab += 2;
+                sig *= -1;;
+            }
+
+            res = res*4;
+
+            document.write('valor del numero pi: ' + res);
+        };
+
+
+    </script>
+
+
+    <h4>Numero Pi</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion numeroE()-->
+
+    <label for="numero">Cuantos terminos de precision desea:</label>
+    <li><input type="text" id="n" value="" placeholder="Numero: "></li>
+    <br>
+    <input type="submit" onclick="return numeroPi()" value="Calculo">
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Autor Yeison Vela
+    ID: 597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+<body>
+
+    <script>
+
+        function numero(){
+
+            var n1 = parseInt(document.getElementById("n1").value);
+            var sum = 0;
+            
+            //Se hace un for donde se lee el numero que ingreso el usuario el cual sera el limite para terminar en for 
+            for(var i = 1; i <= n1; i++){
+                //se empieza a realizar la suma 
+                sum += i;
+                document.write(i + "\t");
+                
+            };
+            
+            //Se imprimen los datos
+            document.writeln("<br/>"); 
+            document.writeln("<br/>");            
+            document.write('La sumatoria es: ' + sum);
+            document.write('<br/>*****************');
+            document.write('<br/>El promedio es: ' + (sum/n1));
+            document.write('<br/>*****************');
+            
+
+        };
+
+                
+    </script>
+
+    <h4>Serie de numeros, sumatoria y promedio</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion numero()-->
+    <form>
+
+        <label for="numero">Cuantos numeros desea :</label>
+        <li><input type="text" id="n1" value="" placeholder="Numero: "></li>
+        <br>
+        <input type="submit" onclick="return numero()" value="Calculo">
+
+    </form>
+    
+</body>
+</html>

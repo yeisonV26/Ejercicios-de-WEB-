@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Autor Yeison Vela
+    ID: 597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+<body>
+    
+
+<script>
+
+    function cuadratica(){
+
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+    var c = parseInt(document.getElementById("c").value);
+    
+        //creo una variable para el resultado en positivo y negativo 
+    var x1 = (-b + Math.sqrt(b * b - 4 * a * c))/(2 * a);
+    var x2 = (-b - Math.sqrt(b * b - 4 * a * c))/(2 * a);
+
+        document.write('<br/> x1: ' + x1);
+        document.write('<br/> x2: ' + x2);
+
+
+};
+
+</script>
+
+<h4>Serie de taylor</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion cuadratica()-->
+    <form>
+
+        <label for="numero">Ingrese el valor de A:</label>
+        <li><input type="text" id="a" value="" placeholder="Cantidad: "></li>
+        <br>
+        <label for="numero">Ingrese el valor de B:</label>
+        <li><input type="text" id="b" value="" placeholder="Numero: "></li>
+        <br>
+        <label for="numero">Ingrese el valor de C:</label>
+        <li><input type="text" id="c" value="" placeholder="Numero: "></li>
+        <br>
+        <input type="submit" onclick="return cuadratica()" value="Calculo">
+
+    </form>
+
+</body>
+</html>

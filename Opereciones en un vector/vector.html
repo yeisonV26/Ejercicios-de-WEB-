@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Autor Yeison Vela
+    ID:597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+<body>
+
+    <script>
+
+        function vector(){
+
+        var n = parseInt(document.getElementById("n").value);
+        var num = [n];
+        var sum = 0;
+        var pro = 0;
+            //creo un for donde leo el numero que ingresa luego le asigno a la varibles del arreglo la funcion que 
+            //nos dieron y empiezo a sumar, por ultimo tomo el total de la suma y la divido por el total del valor ingresado para sacar el promedio
+        for (var i = 0; i < n; i++) {
+            num[i] = (i+1)*i;
+            sum += num[i];
+            pro = sum/n;
+        }
+
+        document.write('<br/>La suma es: ' + sum);
+        document.write('<br/>El promedio es: ' + pro);
+    };
+
+    </script>
+    
+    <h4>Operacoines de un vector</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion vector()-->
+
+    <label for="numero">Cuantas posiciones desea:</label>
+    <li><input type="text" id="n" value="" placeholder="Numero: "></li>
+    <br>
+    <input type="submit" onclick="return vector()" value="Calculo">
+    
+</body>
+</html>

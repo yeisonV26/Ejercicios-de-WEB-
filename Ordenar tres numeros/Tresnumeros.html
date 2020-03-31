@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Autor Yeison Vela
+    ID:597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+<body>
+    <script>
+            //Creo la funcion para calcular el numero mayor
+
+        function Mayor(){
+            var n1=parseInt(document.getElementById("n1").value);
+            var n2=parseInt(document.getElementById("n2").value);
+            var n3=parseInt(document.getElementById("n3").value);
+
+            var mayor;
+            var menor;
+
+            var numeros = [n1, n2, n3];
+            
+            mayor = Math.max(n1, n2, n3);
+            menor = Math.min(n1, n2, n3);
+            
+            //Utilizo la funcion de Math.sort, pero antes tengo que pasarle 2 parametros para utilizarlos en las ecuacion donde los resto y miro cual es mayor 
+            numeros.sort((numero1, numero2) => numero2 - numero1);
+
+            //Pongo un alert para mostrar el resultado  
+            alert('Numero Mayor: ' + mayor);
+            alert('Numero menor: ' + menor);
+            alert('numeros ordenados ' + numeros);
+    };
+
+
+    </script>
+
+        <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion Mayor()-->
+        <form>
+
+            <li><input type="text" id="n1" value="" placeholder="introduce el primer numero"></li>
+            <br>
+            <li><input type="text" id="n2" value="" placeholder="introduce el segundo numero"></li>
+            <br>
+            <li><input type="text" id="n3" value="" placeholder="introduce el tercero numero"></li>
+            <br>
+            <input type="submit" onclick="return Mayor()" value="Mayor">
+    
+        </form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yeison Vela
+    ID:597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+
+        function ParImpar() {
+
+            var n = parseInt(document.getElementById("n").value);
+            var num = [n];
+            var sum = 0;
+            var pro = 1;
+
+            for (var i = 0; i < n; i++) {
+                if (i % 2 == 0) {
+                    num[i] = i + 7;
+                }else{
+                    num[i] = i - 1;
+                }
+
+                if (num[i] % 2 == 0) {
+                    sum += num[i];
+                }else{
+                    pro *= num[i];
+                }
+              
+                document.write('<br/>El valor de la posicion es: [ ' + i + ' ] ' + num[i]);
+            };
+
+            document.write('<br/>La suma es: ' + sum);
+            document.write('<br/>La productoria es: ' + pro);
+
+        };
+
+
+    </script>
+
+    <h4>Numeros Pares e Impares</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion ParImpar()-->
+
+    <label for="numero">Cuantas posiciones desea:</label>
+    <li><input type="text" id="n" value="" placeholder="Numero: "></li>
+    <br>
+    <input type="submit" onclick="return ParImpar()" value="Calculo">
+
+</body>
+
+</html>

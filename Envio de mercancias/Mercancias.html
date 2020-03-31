@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yesion Vela
+    ID:597335-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function mercancia() {
+
+            var peso = parseInt(document.getElementById("peso").value);
+            var valor = parseInt(document.getElementById("valor").value);
+            var dia = document.getElementById("dia").value;
+            var pago = document.getElementById("pago").value;
+
+            var tarifa = 0;
+            var des = 0;
+            var prom = 0;
+
+            //creo un condicional para saber cuanto cobrar dependiendo del peso
+            if (peso < 100)
+                tarifa = 20000;
+            else (peso >= 100 || peso <= 150)
+            tarifa = 25000;
+            if (peso > 150 || peso <= 200)
+                tarifa = 30000;
+            else (peso > 200)
+            tarifa = 35000 + (peso - 200) / 10 * 2000;
+
+
+            //creo un condicional para saber cuanto es el descuento dependiendo del valor de la mercancia
+
+            if (valor >= 300000 || valor <= 600000)
+                des = tarifa * 0.1;
+            else (valor > 600000 || valor <= 1000000)
+            des = tarifa * 0.2;
+            if (valor > 1000000) {
+                des = tarifa * 0.3;
+            }
+
+            //creo un condicional para saber si es lunes y con que metodo de pago para realizar la promocion
+
+            if (dia == "s" || pago == "t")
+                prom = tarifa * 0.5;
+            else (pago == "e" || valor > 1000000)
+            prom = tarifa * 0.6;
+
+
+            //creo un condicional para saber si ya tiene una promocion en dado caso que no tenga le ponemos es descuento
+
+            if (prom > 0) {
+                document.writeln('Tarifa: ' + tarifa);
+                document.writeln('*****************');
+                document.writeln('Promocion: ' + prom);
+                document.writeln('*****************');
+                document.writeln('Total a pagar: ' + (tarifa - prom));
+
+            } else {
+                document.writeln('Tarifa: ' + tarifa);
+                document.writeln('*****************');
+                document.writeln('Descuento: ' + des);
+                document.writeln('*****************');
+                document.writeln('Total a pagar: ' + (tarifa - des));
+            }
+
+
+        };
+
+
+    </script>
+
+    <h4>Envio de la mercancia</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion mercancia()-->
+    <form>
+
+        <label for="Peso">Peso de la mercancia:</label>
+        <li><input type="text" id="peso" value="" placeholder="Peso de la mercancia: "></li>
+        <br>
+        <label for="Valor">Valor de la mercancia:</label>
+        <li><input type="text" id="valor" value="" placeholder="Valor de la mercancia: "></li>
+        <br>
+        <label for="Dia"> Es lunes?</label>
+        <li><input type="text" id="dia" value="" placeholder="[S]i [N]o: "></li>
+        <br>
+        <label for="tipo">Tipo de pago: </label>
+        <li><input type="text" id="pago" value="" placeholder="[E]fectivo o [T]arjeta: "></li>
+        <br>
+        <input type="submit" onclick="return mercancia()" value="Calculo">
+
+    </form>
+
+
+</body>
+
+</html>

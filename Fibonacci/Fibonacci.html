@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Autor Yeison Vela
+    ID: 597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+<body>
+
+
+    <script>
+        function fibonacci(){
+
+            var n = parseInt(document.getElementById("n").value);
+            //inicio las variables de a y b las cuales son los dos primeros numeros de la serie
+            var a = 0;
+            var b = 1;
+            var c = 0;
+            sum = 1;
+            
+            document.write(a + " " + b);
+            //REalizo un for donde hay un contador y una suma en la cual voy sumando los valores de a y b para que me de el siguiente numero y luego lo remplazo y vuelvo a realizar el ciclo
+            for(var i = 2; i<=n; i++){
+                c = a + b;
+                document.write(c + '\t');
+                sum += c;
+                a = b;
+                b = c;
+            };
+
+            document.write('</br>*****************');
+            document.write('</br> la suma es: ' + sum);
+
+        };
+
+    </script>
+    
+    <h4>Serie de fibonacci</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion fibonnacci()-->
+    <form>
+
+        <label for="numero">Ingrese los terminos que quiere:</label>
+        <li><input type="text" id="n" value="" placeholder="Cantidad: "></li>
+        <br>
+        <input type="submit" onclick="return fibonacci()" value="Calculo">
+
+    </form>
+
+</body>
+</html>

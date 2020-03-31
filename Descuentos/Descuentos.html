@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Autor Yeison Vela
+    ID:597335-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+<body>
+
+    <script>
+
+        function descuentos(){
+
+            var n1 = parseInt(document.getElementById("n1").value);
+            var valor = n1*650000;
+            var des = 0;
+            //Creo un ciclo en el cual comparo el numero que el usuario ingreso 
+            if(n1<5){
+                des = valor*0.1; //cuando es menor que cinco calculo saco el 10%
+                
+            }else(n1>=5 && n1<10)
+                des = valor*0.2; //cuando es menor que cinco calculo saco el 20%
+                
+            if(n1>=10){
+                des = valor*0.4; //cuando es menor que cinco calculo saco el 4s0%
+                
+            }
+                alert('El valor a pagar es de: ' + (valor - des))
+            
+        
+        };
+
+    </script>
+    
+    <h4>El descuento de la compra</h4>
+     <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion descuentos()-->
+     <form>
+
+        <li><input type="text" id="n1" value="" placeholder="Ingrese el numero de escritorios"></li>
+        <br>
+        <input type="submit" onclick="return descuentos()" value="Calculo">
+
+    </form>
+</body>
+</html>

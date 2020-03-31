@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yeison Vela
+    ID: 597335-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+
+        function serie() {
+
+            var cantidad = parseInt(document.getElementById("cantidad").value);
+            var numero = parseInt(document.getElementById("numero").value);
+            var sum = 0;
+            var n = 0;
+            var fac = 0;
+            var con = 1;
+            var t = 0;
+
+            //Se hace un for donde se lee el numero que ingreso el usuario el cual sera el limite para terminar en for 
+            for (var i = 1; i <= cantidad; i++) {
+                //se multiplican los valores
+                fac = con * i;
+            };
+
+            for (var j = 0; j < cantidad; j++) {
+                n = Math.pow(numero, j) / fac;
+                sum += t;
+            };
+
+            document.write('Serie de taylor: ' + numero + sum);
+
+        };
+
+
+    </script>
+
+    <h4>Serie de taylor</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion serie()-->
+    <form>
+
+        <label for="numero">Cuantos numeros desea:</label>
+        <li><input type="text" id="cantidad" value="" placeholder="Cantidad: "></li>
+        <br>
+        <label for="numero">Ingrese el numero :</label>
+        <li><input type="text" id="numero" value="" placeholder="Numero: "></li>
+        <br>
+        <input type="submit" onclick="return serie()" value="Calculo">
+
+    </form>
+
+
+</body>
+
+</html>

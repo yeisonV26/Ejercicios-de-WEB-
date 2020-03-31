@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Autor Yeison Vela
+    ID:507335-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeison Vela</title>
+</head>
+
+<body>
+
+    <script>
+
+        function mercancia(){
+
+        
+        var costo = parseInt(document.getElementById("costo").value);
+        var producto = document.getElementById("producto").value;
+        var ambiente = document.getElementById("ambiente").value;
+        var dias = parseInt(document.getElementById("dias").value);
+        var litros = parseInt(document.getElementById("litros").value);
+        var alma = document.getElementById("alma").value;
+
+        var CA = 0;
+        var CE = 0;
+        var PDP = 0;
+
+
+        //Productos perecederos
+        if (producto == 'p') {
+            if (ambiente == 'f')
+                if (dias < 10)
+                    costo * 0.5;
+                else (dias <= 10)
+            costo * 0.1;
+            if (dias < 20)
+                costo * 0.03;
+            else (dias > 20)
+            costo * 0.1;
+            if (dias == 20)
+                costo + 0.05;
+            //Productos NO perecederos
+        } else {
+            if (litros >= 50) {
+                costo * 0.1;
+            } else (litros < 50)
+            costo * 0.2;
+        }
+
+        CA = costo;
+
+        //Porcentaje Deprecioacion del Producto 
+        if (dias < 30) {
+            PDP = 0.95;
+        } else {
+            (dias > 30)
+            PDP = 0.85;
+
+        }
+
+
+        //Costo de Exhibicion
+        if (producto == 'p') {
+            if (alma == 'n') {
+                CE = CA * 2;
+            } else (alma == 'c')
+            CE = CA;
+        } else {
+            if (alma == 'e') {
+                CE = CA * 0.05;
+            } else {
+                (alam == 'g')
+                CE = CA * 0.07;
+            }
+
+        }
+
+        var VRP = (CC + CA + CE) * PDP;
+        var VRV = 0;
+
+        if (producto == 'p') {
+            VRV = VRP * 1.4;
+        } else {
+            VRV = VRP * 1.2;
+        }
+
+    };
+
+
+        document.writeln('Costo de almacenamiento: ' + CA);
+        document.writeln('*****************');
+        document.writeln('Porcentaje de deprecion: ' + PDP);
+        document.writeln('*****************');
+        document.writeln('Costo de exhibicio: ' + CE);
+        document.writeln('*****************');
+        document.writeln('Valor del producto' + VRP);
+        document.writeln('*****************');
+        document.writeln('Valor de venta' + VRV);
+
+
+
+    </script>
+
+
+
+
+    <h4>Almacenes suceso S.A.</h4>
+    <!--Realizo un formulario para que ingrese los numeros y utilizo un boton para llamar la funcion mercancia()-->
+    <form>
+
+        <label for="Peso">Costo de compra:</label>
+        <li><input type="text" id="Costo" value="" placeholder="Costo: "></li>
+        <br>
+        <label for="Valor">Perecedero o No perecedero:</label>
+        <li><input type="text" id="producto" value="" placeholder="Tipo de producto"></li>
+        <br>
+        <label for="Dia">Frio o Ambiente: </label>
+        <li><input type="text" id="ambiente" value="" placeholder="Tipo de conservacion"></li>
+        <br>
+        <label for="tipo">Periodo de almacenamiento: </label>
+        <li><input type="text" id="dias" value="" placeholder="Periodo en dias"></li>
+        <br>
+        <label for="tipo">Volumen de litros: </label>
+        <li><input type="text" id="litros" value="" placeholder="Litros"></li>
+        <br>
+        <label for="tipo">Nevera, Congelador, Estanteria y Guacal: </label>
+        <li><input type="text" id="alma" value="" placeholder="Almacenamiento"></li>
+        <br>
+        <input type="submit" onclick="return mercancia()" value="Calculo">
+
+    </form>
+
+
+</body>
+
+</html>
